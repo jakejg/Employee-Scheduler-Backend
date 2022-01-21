@@ -49,7 +49,7 @@ router.post('/login', async (req, res, next) => {
         // const token = createToken(user.username, user.is_admin, user.comp_id)
 
         // return res.json({token});
-        return "It worked"
+        return res.json("It worked")
     }
     catch(e){
         next(e);
