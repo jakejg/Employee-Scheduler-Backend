@@ -13,7 +13,7 @@
 /build
 
 #environmental variables
-/back-end/.env
+.env
 /back-end/serviceAccount.json
 # misc
 
