@@ -3,7 +3,7 @@
 require("dotenv").config();
 
 const SECRET_KEY = process.env.KEY;
-const BCRYPT_WORK_FACTOR = 12;
+const BCRYPT_WORK_FACTOR = 3;
 
 // set which database to use for testing
 // use environmental variable DB_URL on heroku
