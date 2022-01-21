@@ -3,7 +3,7 @@ const { client, Client } = require('pg');
 
 let db = new Client({
         connectionString: DB_URI,
-        rejectUnauthorized: false
+        ssl: { rejectUnauthorized: false }
     })
 db.connect();
 console.log("Database connected")

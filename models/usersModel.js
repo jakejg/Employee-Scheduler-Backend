@@ -130,6 +130,7 @@ class User {
             `SELECT password from users 
             WHERE username=$1`, [username]
         )
+        console.log('finished db query')
         if (!results.rows[0]) throw new ExpressError(`User with username ${username} not found`, 400);
         
         return results.rows[0].password
