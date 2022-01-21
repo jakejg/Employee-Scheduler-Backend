@@ -36,18 +36,19 @@ router.post('/register', async (req, res, next) => {
 
 router.post('/login', async (req, res, next) => {
     try{
+        console.log('in route')
         const { username, password } = req.body;
         const isAuthorized = await User.authenticate(username, password);
-
+        console.log("After authenticate")
         if (!isAuthorized) throw new ExpressError("Password and username do not match", 400);
 
         const user = await User.findByUsername(username);
-
+        console.log("Found username")
         //  check if a calendar exists for a company
         Company.checkCalendar(user.comp_id)
-       
+        console.log("CHecked calendar")
         const token = createToken(user.username, user.is_admin, user.comp_id)
-
+        console.log("Got token")
         return res.json({token});
     }
     catch(e){
