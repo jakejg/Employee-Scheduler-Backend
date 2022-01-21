@@ -43,8 +43,8 @@ router.post('/login', async (req, res, next) => {
 
         const user = await User.findByUsername(username);
 
-         // check if a calendar exists for a company
-        // Company.checkCalendar(user.comp_id)
+        //  check if a calendar exists for a company
+        Company.checkCalendar(user.comp_id)
        
         const token = createToken(user.username, user.is_admin, user.comp_id)
 
